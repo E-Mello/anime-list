@@ -1,31 +1,36 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/index.css" />
+    <title>Login</title>
+  </head>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/index.css">
+  <body>
+    <div id="login">
+      <h1>LOGAR</h1>
 
-    <title>Document</title>
-</head>
+      <div id="form">
+        <div id="formContent">
+          <input placeholder="E-mail" type="email" name="email" />
+          <input placeholder="Senha" type="password" name="password" />
+          <button type="button">LOGAR</button>
 
-<body>
-    <div id="login" class="b1">
-        <h1 class="b2">LOGAR</h1>
-        <div id="form" class="b3">
-            <div id="formContent" class="">
-                <input placeholder="E-Mail" type="email" name="email" id="">
-                <input placeholder="Senha" type="password" name="password" id="">
-                <button type="button">LOGAR</button>
-                <input type="checkbox" name="lembredemim" id="">
-                <label for="lembredemim">Lembre de mim</label>
-                <span>Precisa de Ajuda?</span>
-                <span>Novo por aqui?
-                    <a href="https://www.google.com.br" target="_blank"> Assine agora</a>
-                </span>
-            </div>
+          <div class="options">
+            <label>
+              <input type="checkbox" name="lembredemim" />
+              Lembre de mim
+            </label>
+            <span>Precisa de Ajuda?</span>
+          </div>
         </div>
-    </div>
-</body>
+      </div>
 
+      <div class="footer">
+        Novo por aqui?
+        <a href="https://www.google.com.br" target="_blank">Assine agora</a>.
+      </div>
+    </div>
+  </body>
 </html>

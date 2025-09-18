@@ -6,12 +6,13 @@
   font-family: Poppins, sans-serif;
 }
 
+/* Configuracao personalizada */
 @font-face {
   font-family: Poppins;
   src: url("/assets/fonts/Poppins/Poppins-Regular.ttf");
 }
 
-/* Tela cheia */
+/* Tela cheia - troquei a div pelo body*/
 body {
   background-image: url("/assets/background.png");
   background-color: #000000de;
@@ -24,35 +25,39 @@ body {
   justify-content: center;
 }
 
-/* Container principal */
+/* Container principal - body (pai) -> login (filho) */
 #login {
   color: white;
-  width: 32rem; /* proporcional, mas fixo o bastante */
+  width: 32rem;
+  /* proporcional (trabalhar min)*/
   min-height: 38rem;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
   gap: 2rem;
   padding: 2rem;
   border-radius: 0.7rem;
   border: 2px solid rgba(255, 255, 255, 0.2);
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: rgba(0, 0, 0, 0.85);
 }
 
 /* Título */
 #login h1 {
-  font-size: 2rem;
-  font-weight: 700;
+  display: flex;
+  font-size: 2em;
+  font-weight: bold;
   text-align: center;
 }
 
-/* Formulário */
+/* div pai do form */
 #form {
   width: 100%;
   display: flex;
   justify-content: center;
 }
 
+/* div interna do form */
 #formContent {
   display: flex;
   flex-direction: column;
@@ -61,7 +66,7 @@ body {
   width: 100%;
 }
 
-/* Inputs */
+/* Inputs do form */
 #formContent input[type="email"],
 #formContent input[type="password"] {
   width: 100%;
@@ -82,11 +87,13 @@ body {
   background-color: #e5e5e5;
   color: #000;
   border: none;
-  font-size: 1.1rem;
-  font-weight: 700;
+  font-size: 1.7rem;
+  font-weight: bolder;
   cursor: pointer;
   transition: 0.3s;
 }
+
+/* Botão de logar */
 #formContent button:hover {
   background-color: #fff;
 }
@@ -100,21 +107,12 @@ body {
   align-items: center;
 }
 
+/* precisa de mim? */
 #formContent label {
   display: flex;
   align-items: center;
   gap: 0.3rem;
   font-size: 0.9rem;
-}
-
-#formContent a {
-  color: white;
-  font-weight: 600;
-  text-decoration: none;
-}
-
-#formContent a:hover {
-  text-decoration: underline;
 }
 
 /* Rodapé */
@@ -123,7 +121,64 @@ body {
   font-size: 0.9rem;
   text-align: center;
 }
+
+/* Link do rodapé */
 .footer a {
   color: white;
-  font-weight: 700;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+/* Efeito do link do rodapé */
+.footer a:hover {
+  text-decoration: underline;
+}
+
+@media screen and (max-width: 440px) {
+  body {
+    background-image: linear-gradient(180deg, rgba(12, 10, 13, 1) 0%, rgba(31, 29, 42, 1) 50%, #2A2740 100%);
+    background-repeat: no-repeat;
+    background-color: #1F1D2A
+  }
+
+  #login {
+    border: none;
+    height: 95dvh;
+    align-self: flex-end;
+    padding: .5rem;
+    background-color: transparent;
+  }
+
+  #form {
+    padding: 1.5rem;
+  }
+
+  #formContent .options {
+    order: 1;
+    padding-bottom: 2rem;
+  }
+
+  #formContent button {
+    order: 2;
+  }
+
+  .footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 3rem;
+  }
+
+  #login h1 {
+    font-size: 3em;
+    justify-content: flex-start;
+    padding-bottom: 3rem;
+  }
+
+  .barrinha {
+    background-color: #898989;
+    width: 25dvw;
+    height: 0.30dvh;
+  }
 }

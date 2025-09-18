@@ -1,0 +1,96 @@
+/* Reset + fonte */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Poppins, sans-serif;
+}
+
+/* Configuracao personalizada */
+@font-face {
+    font-family: Poppins;
+    src: url("/assets/fonts/Poppins/Poppins-Regular.ttf");
+}
+
+/* Tela cheia - troquei a div pelo body*/
+body {
+    background-color: #000000de;
+    background-size: cover;
+    width: 100dvw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    margin: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+header {
+    background-image: url("/assets/images/hero-banner.png");
+    background-size: cover;
+    background-position: center;
+    height: 73dvh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    background-color: blueviolet;
+    overflow-x: hidden;
+    width: 100dvw;
+    z-index: 1;
+}
+
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    background-color: yellow;
+    width: 100%;
+    padding: 1rem 3rem;
+    align-items: center;
+}
+
+.nav ul {
+    display: flex;
+    flex-direction: row;
+    z-index: 10;
+    gap: 5rem;
+}
+
+.navbar-options {
+    background-color: red;
+}
+
+.navbar-options img {
+    width: 2rem;
+    height: 2rem;
+}
+
+.destaque {
+    align-self: flex-start;
+    display: flex;
+    overflow-y: hidden;
+    overflow-x: auto;
+    margin-top: 1rem;
+}
+
+.destaque .item {
+    width: 9rem;
+    height: 12rem;
+    background-color: aqua;
+    margin-right: 1rem;
+
+}
+
+.sugestao {
+    display: flex;
+    align-self: flex-start;
+    margin-top: 1rem;
+}
+
+.sugestao .item {
+    width: 16rem;
+    height: 9rem;
+    background-color: beige;
+    margin-right: 1rem;
+}

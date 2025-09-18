@@ -98,6 +98,11 @@ body {
   background-color: #fff;
 }
 
+#formContent button a {
+  text-decoration: none;
+  color: black;
+}
+
 /* Checkbox + label + links */
 .options {
   width: 100%;
@@ -136,16 +141,21 @@ body {
 
 @media screen and (max-width: 440px) {
   body {
-    background-image: linear-gradient(180deg, rgba(12, 10, 13, 1) 0%, rgba(31, 29, 42, 1) 50%, #2A2740 100%);
+    background-image: linear-gradient(
+      180deg,
+      rgba(12, 10, 13, 1) 0%,
+      rgba(31, 29, 42, 1) 50%,
+      #2a2740 100%
+    );
     background-repeat: no-repeat;
-    background-color: #1F1D2A
+    background-color: #1f1d2a;
   }
 
   #login {
     border: none;
     height: 95dvh;
     align-self: flex-end;
-    padding: .5rem;
+    padding: 0.5rem;
     background-color: transparent;
   }
 
@@ -179,6 +189,6 @@ body {
   .barrinha {
     background-color: #898989;
     width: 25dvw;
-    height: 0.30dvh;
+    height: 0.3dvh;
   }
 }

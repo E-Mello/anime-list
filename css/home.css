@@ -7,19 +7,19 @@ html {
   scroll-behavior: smooth;
 }
 
+body {
+  margin: 0;
+  background-color: #111;
+  font-family: Poppins, sans-serif;
+  color: #fff;
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: Poppins, sans-serif;
   color: #fff;
-}
-
-body {
-  background-color: #111;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
 }
 
 /* Hero */
@@ -119,87 +119,65 @@ body {
 }
 
 /* ----------------------------------------------- Carousel ---------------------------------------------------------- */
-.carousel {
-  margin: 2rem 0;
+
+h2.group-title {
+  margin: 2rem 1rem 0.5rem;
+  font-size: 1.5rem;
 }
 
-.carousel h2 {
-  margin-left: 2rem;
-  margin-bottom: 1rem;
-}
-
-.carousel-track {
-  display: flex;
-  gap: 1rem;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
+/* Wrapper independente para cada grupo */
+.wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 100%);
+  overflow: hidden;
   scroll-behavior: smooth;
-  padding: 0 2rem;
+  margin-bottom: 2rem;
 }
 
-.carousel-track::-webkit-scrollbar {
-  display: none;
+.wrapper section {
+  width: 100%;
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(5, auto);
+  margin: 20px 0;
 }
 
 .item {
-  flex: 0 0 auto;
-  width: 200px;
-  border-radius: 0.5rem;
-  overflow: hidden;
-  scroll-snap-align: start;
-  transition: transform 250ms ease;
+  padding: 0 2px;
+  transition: all var(--duration) ease;
 }
 
 .item:hover {
-  transform: scale(1.2);
+  margin: 0 40px;
+  transform: scale(var(--item-grow));
   z-index: 2;
 }
-/* ----------------------------------------------- Carousel ---------------------------------------------------------- */
 
 .item img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  border-radius: 4px;
 }
 
-/* Overlay texto */
-.overlay {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  padding: 0.5rem 1rem;
-  background: linear-gradient(0deg, rgba(0, 0, 0, 0.8) 40%, transparent 100%);
-}
-
-.heading {
-  margin: 0;
-  font-size: 1rem;
-}
-
-.duration {
-  margin: 0;
-  font-size: 0.8rem;
-  opacity: 0.8;
-}
-
-/* Arrows */
+/* Setas */
 .arrow__btn {
   position: absolute;
   top: 0;
   bottom: 0;
-  width: 60px;
   color: #fff;
-  font-size: 3rem;
-  font-weight: bold;
+  text-decoration: none;
+  font-size: 6em;
+  width: 80px;
+  padding: 20px;
+  text-align: center;
+  z-index: 1;
   display: flex;
   align-items: center;
   justify-content: center;
-  text-decoration: none;
-  z-index: 1;
 }
 
-.left-arrow {
+.wrapper section .arrow__btn:first-of-type {
   left: 0;
   background: linear-gradient(
     -90deg,
@@ -208,7 +186,7 @@ body {
   );
 }
 
-.right-arrow {
+.wrapper section .arrow__btn:last-of-type {
   right: 0;
   background: linear-gradient(
     90deg,
@@ -217,21 +195,11 @@ body {
   );
 }
 
-/* Responsividade */
-@media (max-width: 480px) {
-  .carousel {
-    grid-template-columns: repeat(2, auto);
+/* Remove setas no mobile */
+@media only screen and (max-width: 600px) {
+  .arrow__btn {
+    display: none;
   }
 }
 
-@media (min-width: 481px) and (max-width: 1024px) {
-  .carousel {
-    grid-template-columns: repeat(3, auto);
-  }
-}
-
-@media (min-width: 1025px) {
-  .carousel {
-    grid-template-columns: repeat(5, auto);
-  }
-}
+/* ----------------------------------------------- Carousel ---------------------------------------------------------- */

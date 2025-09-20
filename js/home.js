@@ -1,18 +1,14 @@
-// Carousel functionality
-document.querySelectorAll(".carousel-container").forEach((container) => {
-  const carousel = container.querySelector(".carousel");
-  const leftBtn = container.querySelector(".arrow.left");
-  const rightBtn = container.querySelector(".arrow.right");
+// Carrossel simples usando flexbox + scroll
 
-  // largura do scroll = largura visível do container
-  const scrollAmount = carousel.clientWidth;
+document.querySelectorAll(".carousel").forEach((carousel) => {
+  const leftBtn = carousel.querySelector(".left-arrow");
+  const rightBtn = carousel.querySelector(".right-arrow");
 
-  leftBtn.addEventListener("click", () => {
-    carousel.scrollBy({ left: -scrollAmount, behavior: "smooth" });
+  rightBtn?.addEventListener("click", () => {
+    carousel.scrollBy({ left: carousel.clientWidth, behavior: "smooth" });
   });
 
-  rightBtn.addEventListener("click", () => {
-    carousel.scrollBy({ left: scrollAmount, behavior: "smooth" });
+  leftBtn?.addEventListener("click", () => {
+    carousel.scrollBy({ left: -carousel.clientWidth, behavior: "smooth" });
   });
 });
-

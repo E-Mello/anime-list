@@ -35,7 +35,7 @@ body {
   padding: 2rem 3dvw;
 }
 
-/* Navbar (linha superior) */
+/* ------------------- NAVBAR ------------------- */
 .nav {
   display: flex;
   justify-content: space-between;
@@ -65,13 +65,72 @@ body {
   gap: 1.5rem;
 }
 
+/* ------------------- PERFIL E DROPDOWN ------------------- */
+.perfil-menu {
+  position: relative;
+  display: inline-block;
+}
+
 .perfil-icon {
   width: 2.5rem;
   height: 2.5rem;
   border-radius: 50%;
+  cursor: pointer;
 }
 
-/* Barra de pesquisa (desktop: na nav) */
+/* Dropdown oculto por padrão */
+.dropdown {
+  display: none;
+  position: absolute;
+  right: 0;
+  top: 3.2rem;
+  background-color: #1a1a1a;
+  border: 1px solid #333;
+  border-radius: 6px;
+  min-width: 200px;
+  z-index: 1000;
+  padding: 0.5rem 0;
+  list-style: none;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+/* Mostrar dropdown no hover (funciona bem em desktop;
+   em mobile o primeiro toque ativa o :hover) */
+.perfil-menu:hover .dropdown {
+  display: block;
+  animation: fadeIn 0.3s ease;
+}
+
+.dropdown li {
+  padding: 0.8rem 1rem;
+}
+
+.dropdown li a {
+  text-decoration: none;
+  color: #fff;
+  display: block;
+  transition: background 0.3s;
+}
+
+.dropdown li a:hover {
+  background-color: #333;
+  color: #facc15;
+  border-radius: 4px;
+}
+
+/* Animação */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ------------------- BARRA DE PESQUISA ------------------- */
 .search-container {
   position: relative;
 }
@@ -95,7 +154,7 @@ body {
   height: 1rem;
 }
 
-/* Conteúdo Hero (desktop: alinhado à esquerda) */
+/* ------------------- HERO CONTENT ------------------- */
 .hero-content {
   margin-top: auto;
   text-align: left;
@@ -205,7 +264,7 @@ h2.group-title {
   );
 }
 
-/* ------------------- MOBILE ------------------- */
+/* ------------------- MOBILE ≤ 768px ------------------- */
 @media only screen and (max-width: 768px) {
   .hero {
     height: auto;
@@ -213,11 +272,12 @@ h2.group-title {
     padding: 4dvh 2dvw;
   }
 
-  /* Nav centralizada, perfil canto direito */
+  /* Nav empilhada */
   .nav {
     flex-direction: column;
     align-items: center;
     gap: 1rem;
+    position: relative; /* importante pro perfil fixo */
   }
 
   .nav-left {
@@ -229,16 +289,40 @@ h2.group-title {
     justify-content: center;
   }
 
-  .perfil-icon {
-    position: absolute;
-    top: 1rem;
-    right: 1rem;
+  /* Perfil fixo no canto superior direito */
+  .perfil-menu {
+    position: fixed;
+    top: 0.8rem;
+    right: 0.8rem;
+    z-index: 2000;
   }
 
-  /* Barra de pesquisa ocupa linha inteira */
-  .search-container input {
+  .perfil-icon {
+    width: 2.2rem;
+    height: 2.2rem;
+  }
+
+  /* Dropdown no mobile */
+  .dropdown {
+    position: fixed;
+    top: 4.5rem; /* antes estava 3.8rem → aumentei espaço */
+    right: 0.8rem;
+    width: 80%;
+    max-width: 280px;
+    background-color: #1a1a1a;
+    border: 1px solid #333;
+    border-radius: 8px;
+    z-index: 2001;
+  }
+
+  /* Barra de pesquisa ocupa largura total */
+  .search-container {
     width: 90dvw;
     max-width: 500px;
+  }
+
+  .search-container input {
+    width: 100%;
     height: 3rem;
   }
 
@@ -263,6 +347,7 @@ h2.group-title {
   }
 }
 
+/* ------------------- MOBILE ≤ 440px ------------------- */
 @media only screen and (max-width: 440px) {
   .wrapper section {
     grid-auto-columns: 100%;
@@ -271,9 +356,11 @@ h2.group-title {
   .hero-content h2 {
     font-size: 1.4rem;
   }
+
   .nav-left {
     align-self: flex-start;
   }
+
   .nav {
     padding: 0 1rem;
   }

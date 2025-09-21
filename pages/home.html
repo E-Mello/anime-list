@@ -26,13 +26,24 @@
               alt="Pesquisar"
             />
           </div>
-          <a href="/pages/editar-perfil.html">
+
+          <!-- Botão Perfil com dropdown -->
+          <div class="perfil-menu">
             <img
               src="/assets/images/perfil.png"
               alt="Perfil"
               class="perfil-icon"
+              onclick="document.querySelector('.dropdown').classList.toggle('show')"
             />
-          </a>
+            <ul class="dropdown">
+              <li>
+                <a href="/pages/editar-perfil.html">Informações pessoais</a>
+              </li>
+              <li><a href="#">Configurações de privacidade</a></li>
+              <li><a href="#">Assinatura</a></li>
+              <li><a href="#">Histórico</a></li>
+            </ul>
+          </div>
         </div>
       </nav>
 

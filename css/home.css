@@ -277,7 +277,7 @@ h2.group-title {
     flex-direction: column;
     align-items: center;
     gap: 1rem;
-    position: relative; /* importante pro perfil fixo */
+    position: relative; 
   }
 
   .nav-left {
@@ -305,7 +305,7 @@ h2.group-title {
   /* Dropdown no mobile */
   .dropdown {
     position: fixed;
-    top: 4.5rem; /* antes estava 3.8rem → aumentei espaço */
+    top: 4.5rem; 
     right: 0.8rem;
     width: 80%;
     max-width: 280px;

@@ -9,7 +9,12 @@
 
   <body>
     <header class="header">
-      <a href="javascript:history.back()" class="btn-voltar">‹ Voltar</a>
+      <a
+        href="javascript:history.length > 0 ? history.back() : '/pages/home.html'"
+        class="btn-voltar"
+        >‹ Voltar</a
+      >
+
       <h1>Editar Perfil</h1>
     </header>
 

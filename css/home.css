@@ -1,3 +1,5 @@
+/* TODO: Lembrar de organizar os arquivos, ta ficando gigante , separar o css por componentes especificos simulando os componentes da página */
+
 :root {
   --item-grow: 1.2;
   --duration: 250ms;
@@ -259,6 +261,40 @@ body {
   .destaques-list::-webkit-scrollbar {
     display: none;
   }
+}
+
+/* ------------------- Ver mais ------------------- organizar dps qualquer coisa */
+.vermais-btn {
+  font-size: 0.9rem;
+  margin-left: 0.6rem;
+  color: #facc15;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.vermais-btn:hover {
+  text-decoration: underline;
+}
+
+/* Grid escondido por padrão */
+.grid-extra {
+  display: none;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 1rem;
+  margin: 1rem 0;
+}
+
+.grid-extra .extra img {
+  width: 100%;
+  border-radius: 6px;
+  display: block;
+  object-fit: cover;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+}
+
+/* Quando checkbox for marcado, mostra */
+#toggle-mais:checked ~ .grid-extra {
+  display: grid;
 }
 
 /* ------------------- CAROUSEL ------------------- */
